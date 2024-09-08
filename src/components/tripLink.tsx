@@ -24,7 +24,7 @@ export function TripLink({ data }: Props) {
         <Text className="text-zinc-100 text-base font-semibold">
           {data.title}
         </Text>
-        <Text className="text-zinc-400 text-sm" numberOfLines={1}>
+        <Text onPress={handleLinkOpen} className="text-zinc-400 text-sm" numberOfLines={1}>
           {data.url}
         </Text>
       </View>
