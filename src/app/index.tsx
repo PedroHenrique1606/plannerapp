@@ -43,6 +43,8 @@ export default function Index() {
   const [destination, setDestination] = useState("");
   const [emailToInvite, setEmailToInvite] = useState("");
   const [emailsToInvite, setEmailsToInvite] = useState<string[]>([]);
+  const [ownerEmail, setOwnerEmail] = useState("");
+  const [ownerName, setOwnerName] = useState("");
 
   function handleSelectDate(selectedDay: DateData) {
     const dates = calendarUtils.orderStartsAtAndEndsAt({
@@ -131,7 +133,11 @@ export default function Index() {
         starts_at: dayjs(selectedDates.startsAt?.dateString).toString(),
         ends_at: dayjs(selectedDates.endsAt?.dateString).toString(),
         emails_to_invite: emailsToInvite,
+        owner_email: ownerEmail,
+        owner_name: ownerName,
       });
+
+      console.log(emailsToInvite)
 
       Alert.alert("Nova viagem", "Sua viagem foi criada com sucesso", [
         {
@@ -220,7 +226,6 @@ export default function Index() {
                 <Settings2 color={colors.zinc[200]} size={20} />
               </Button>
             </View>
-
             <Input>
               <UserRoundPlus color={colors.zinc[400]} size={20} />
               <Input.Field
@@ -288,6 +293,26 @@ export default function Index() {
         onClose={() => setShowModal(MODAL.NONE)}
       >
         <View className="my-2 flex-wrap gap-2 border-b border-zinc-800 py-5 items-center">
+          <Input variant="secondary">
+            <UserRoundPlus color={colors.zinc[400]} size={20} />
+            <Input.Field
+              placeholder="Nome do Organizador"
+              onChangeText={setOwnerName}
+              value={ownerName}
+            />
+          </Input>
+
+          <Input variant="secondary">
+            <AtSign color={colors.zinc[400]} size={20} />
+            <Input.Field
+              placeholder="Email do Organizador"
+              keyboardType="email-address"
+              onChangeText={setOwnerEmail}
+              value={ownerEmail}
+            />
+          </Input>
+        </View>
+        <View className="my-2 flex-wrap gap-2 py-5 items-center">
           {emailsToInvite.length > 0 ? (
             emailsToInvite.map((email) => (
               <GuestEmail
