@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import { Input } from "@/components/input";
-import { Image, Text, View } from "react-native";
-import {
-  ArrowRight,
-=======
 import { Button } from "@/components/button";
 import { Calendar } from "@/components/calendar";
 import { GuestEmail } from "@/components/email";
@@ -20,18 +14,11 @@ import { router } from "expo-router";
 import {
   ArrowRight,
   AtSign,
->>>>>>> e0bbc38092df7ae24af4334502227a5b1ae0ce4a
   Calendar as IconCalendar,
   MapPin,
   Settings2,
   UserRoundPlus,
 } from "lucide-react-native";
-<<<<<<< HEAD
-import { colors } from "@/styles/colors";
-import { Button } from "@/components/button";
-
-export default function Index() {
-=======
 import { useEffect, useState } from "react";
 import { Alert, Image, Keyboard, Text, View } from "react-native";
 import { DateData } from "react-native-calendars";
@@ -192,7 +179,6 @@ export default function Index() {
     return <Loading />;
   }
 
->>>>>>> e0bbc38092df7ae24af4334502227a5b1ae0ce4a
   return (
     <View className="flex-1 items-center justify-center px-5">
       <Image
@@ -200,35 +186,6 @@ export default function Index() {
         className="h-8"
         resizeMode="contain"
       />
-<<<<<<< HEAD
-      <Text className="text-zinc-400 font-regular text-center text-lg mt-3">
-        Convide seus amigos e planeje sua{"\n"}próxima viagem
-      </Text>
-      <View className="w-full bg-zinc-900 p-4 rounded-lg my-8 border border-zinc-800">
-        <Input>
-          <MapPin color={colors.zinc[400]} size={20} />
-          <Input.Field placeholder="Para onde?" />
-        </Input>
-        <Input>
-          <IconCalendar color={colors.zinc[400]} size={20} />
-          <Input.Field placeholder="Quando?" />
-        </Input>
-        <View className="border-b py-3 border-zinc-800">
-          <Button variant="secondary">
-            <Button.Title>Alterar local/data</Button.Title>
-            <Settings2 color={colors.zinc[200]} size={20} />
-          </Button>
-        </View>
-        <Input>
-          <UserRoundPlus color={colors.zinc[400]} size={20} />
-          <Input.Field placeholder="Quem estará na viagem?" />
-        </Input>
-        <Button>
-          <Button.Title>Continuar</Button.Title>
-          <ArrowRight color={colors.lime[950]} size={20} />
-        </Button>
-      </View>
-=======
       <Image source={require("@/assets/bg.png")} className="absolute" />
       <Text className="text-zinc-400 font-regular text-center text-lg mt-3">
         Convide seus amigos e planeje sua{"\n"}próxima viagem
@@ -387,7 +344,6 @@ export default function Index() {
           </Button>
         </View>
       </Modal>
->>>>>>> e0bbc38092df7ae24af4334502227a5b1ae0ce4a
     </View>
   );
 }
